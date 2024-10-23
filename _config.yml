@@ -1,55 +1,89 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Lisa Goh
-email: lisa.goh@cea.fr
-description: >- # this means to ignore newlines until "baseurl:"
-  I am a postdoctoral researcher at the Royal Observatory of Edinburgh. 
-  My research interests invovle exploring modified LCDM theories of the
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username: LisaGoh
-
-# Build settings
+# Set theme
 remote_theme: daviddarnes/alembic@main
-plugins:
-  - jekyll-feed
-  - jekyll-remote-theme
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# File excludes
+exclude:
+- README.md
+- Gemfile
+- Gemfile.lock
+
+# Set plugins
+plugins:
+- jekyll-sitemap
+- jekyll-mentions
+- jekyll-paginate
+- jekyll-redirect-from
+- jekyll-feed
+- jekyll-include-cache
+- jemoji
+- jekyll-remote-theme
+- jekyll-seo-tag
+
+# Site settings
+url: 'https://lisagoh.github.io'
+baseurl: ''
+title: 'Lisa Goh'
+description: 'Cosmology postdoctoral Researcher at the Royal Observatory of Edinburgh'
+permalink: pretty
+encoding: utf-8 # Make sure the encoding is right
+lang: en-GB # Set the site language
+repo: "https://github.com/LisaGoh/lisagoh.github.io"
+email: "lisa.goh@cea.fr"
+
+# Pagination
+# paginate: 5
+# paginate_path: blog/page:num
+
+# Header nav
+navigation_header:
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Research
+  url: /research/
+- title: Papers
+  url: /papers/
+- title: CV
+  url: /cv/
+
+# Footer nav
+navigation_footer:
+- title: Created by Lisa Goh
+
+sass:
+  style: compressed # Style compression
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Europe/London # Timezone for blog posts and alike
+
+# # Collections
+# collections:
+#   posts:
+#     title: Posts
+#     output: true
+#     description: "My thoughts and ideas"
+#     feature_text: |
+#       Welcome to my blog
+#     feature_image: "https://picsum.photos/2560/600?image=866"
+
+# Collection settings
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: post # Set the default layout for posts
+#   -
+#     scope:
+#       path: ""
+#       type: "pages"
+#     values:
+#       layout: page # Set the default layout for pages
+
+
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  LinkedIn: https://www.linkedin.com/in/lisa-goh-6305101a4/
+  GitHub: https://github.com/LisaGoh
+  email: lisa.goh@cea.fr 
